@@ -40,7 +40,7 @@ struct DefaultNetworkClient: NetworkClient {
                 onResponse(.failure(NetworkClientError.urlSessionError))
                 return
             }
-
+            
             guard 200 ..< 300 ~= response.statusCode else {
                 onResponse(.failure(NetworkClientError.httpStatusCode(response.statusCode)))
                 return
@@ -91,7 +91,6 @@ struct DefaultNetworkClient: NetworkClient {
             urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
             urlRequest.httpBody = dtoEncoded
         }
-
         return urlRequest
     }
 

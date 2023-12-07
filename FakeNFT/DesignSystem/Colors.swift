@@ -20,20 +20,19 @@ extension UIColor {
         self.init(red: CGFloat(red) / 255, green: CGFloat(green) / 255, blue: CGFloat(blue) / 255, alpha: CGFloat(alpha) / 255)
     }
 
-    // Ниже приведены примеры цветов, настоящие цвета надо взять из фигмы
-
     // Primary Colors
-    static let primary = UIColor(red: 0 / 255, green: 122 / 255, blue: 255 / 255, alpha: 1.0)
+    static let ypBlack = UIColor(named: "Black") ?? .black
+    static let ypLightGrey = UIColor(named: "ypLightGray") ?? .lightGray
+    static let ypWhite = UIColor(named: "White") ?? .white
+    static let alertColor = UIColor(named: "AlertColor") ?? .lightGray
 
-    // Secondary Colors
-    static let secondary = UIColor(red: 255 / 255, green: 193 / 255, blue: 7 / 255, alpha: 1.0)
-
-    // Background Colors
-    static let background = UIColor.white
-
-    // Text Colors
-    static let textPrimary = UIColor.black
-    static let textSecondary = UIColor.gray
-    static let textOnPrimary = UIColor.white
-    static let textOnSecondary = UIColor.black
+    // Universal Colors
+    static let backgroundUniversal = UIColor(named: "Background Universal") ?? .gray
+    static let blackUniversal = UIColor(named: "Black Universal") ?? .black
+    static let blueUniversal = UIColor(named: "Blue Universal") ?? .blue
+    static let grayUniversal = UIColor(named: "Gray Universal") ?? .darkGray
+    static let greenUniversal = UIColor(named: "Green Universal") ?? .green
+    static let redUniversal = UIColor(named: "Red Universal") ?? .red
+    static let whiteUniversal = UIColor(named: "White Universal") ?? .white
+    static let yellowUniversal = UIColor(named: "Yellow Universal") ?? .yellow
 }
