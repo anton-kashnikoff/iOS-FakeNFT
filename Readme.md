@@ -1,3 +1,10 @@
+# FakeNFT
+<img src="https://github.com/prostokot14/iOS-FakeNFT/assets/86567361/bcbff957-61a3-4f62-b2e4-13b8bd1dc976" width="250">
+<img src="https://github.com/prostokot14/iOS-FakeNFT/assets/86567361/02dd7a3c-d262-465e-b9c5-acb2850c0fe7" width="250">
+<img src="https://github.com/prostokot14/iOS-FakeNFT/assets/86567361/5fcb57ee-b8ca-4311-ae98-cec2ed3b7d32" width="250">
+<img src="https://github.com/prostokot14/iOS-FakeNFT/assets/86567361/61b38148-95e3-4237-a08b-2128172b46cb" width="250">
+<img src="https://github.com/prostokot14/iOS-FakeNFT/assets/86567361/9b9dd29b-f465-415b-b2f4-469cc64571ca" width="250">
+
 # Демонстрация работы приложения
 - [Профиль](https://disk.yandex.ru/i/O7lh871n-52YTA)
 - [Каталог](https://drive.google.com/file/d/1oCUCGAS-AV1a85jKYM882yX8hfsTaaPJ/view?usp=share_link)
