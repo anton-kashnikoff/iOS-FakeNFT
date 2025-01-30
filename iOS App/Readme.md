@@ -5,212 +5,195 @@
 <img src="https://github.com/prostokot14/iOS-FakeNFT/assets/86567361/61b38148-95e3-4237-a08b-2128172b46cb" width="250">
 <img src="https://github.com/prostokot14/iOS-FakeNFT/assets/86567361/9b9dd29b-f465-415b-b2f4-469cc64571ca" width="250">
 
-# Демонстрация работы приложения
-- [Профиль](https://disk.yandex.ru/i/O7lh871n-52YTA)
-- [Каталог](https://drive.google.com/file/d/1oCUCGAS-AV1a85jKYM882yX8hfsTaaPJ/view?usp=share_link)
-- [Корзина](https://www.loom.com/share/bdfee510348b4d65a352f450489ff228?sid=d55cb93d-956d-4d34-b427-7c93919a6028)
-- [Статистика](https://disk.yandex.ru/i/9IwAXzE0i_-Tbw)
+## Application Demonstration
+- [Profile](https://disk.yandex.ru/i/O7lh871n-52YTA)
+- [Catalog](https://drive.google.com/file/d/1oCUCGAS-AV1a85jKYM882yX8hfsTaaPJ/view?usp=share_link)
+- [Cart](https://www.loom.com/share/bdfee510348b4d65a352f450489ff228?sid=d55cb93d-956d-4d34-b427-7c93919a6028)
+- [Statistics](https://disk.yandex.ru/i/9IwAXzE0i_-Tbw)
 ---
-# ТЗ мобильного приложения FakeNFT
 
-# Ссылки
+## FakeNFT Mobile App Requirements
 
-[Дизайн Figma](https://www.figma.com/file/k1LcgXHGTHIeiCv4XuPbND/FakeNFT-(YP)?node-id=96-5542&t=YdNbOI8EcqdYmDeg-0)
+### Links
 
-# Назначение и цели приложения
+[Design in Figma](https://www.figma.com/file/k1LcgXHGTHIeiCv4XuPbND/FakeNFT-(YP)?node-id=96-5542&t=YdNbOI8EcqdYmDeg-0)
 
-Приложение помогает пользователям просматривать и покупать NFT (Non-Fungible Token). Функционал покупки иммитируется с помощью мокового сервера.
+## Purpose and Goals of the Application
 
-Цели приложения:
+The application helps users browse and purchase NFTs (Non-Fungible Tokens). The purchasing functionality is simulated using a mock server.
 
-- просмотр коллекций NFT;
-- просмотр и покупка NFT (иммитируется);
-- просмотр рейтинга пользователей.
+Application goals:
 
-# Краткое описание приложения
+- Viewing NFT collections
+- Viewing and purchasing NFTs (simulated)
+- Viewing user rankings
 
-- Приложение демонстрирует каталог NFT, структурированных в виде коллекций
-- Пользователь может посмотреть информацию о каталоге коллекций, выбранной коллекции и выбранном NFT.
-- Пользователь может добавлять понравившиеся NFT в избранное.
-- Пользователь может удалять и добавлять товары в корзину, а также оплачивать заказ (покупка иммитируется).
-- Пользователь может посмотреть рейтинг пользователей и информацию о пользователях.
-- Пользователь может смотреть информацию и своем профиле, включая информацию об избранных и принадлежащих ему NFT.
+## Brief Description of the Application
 
-Дополнительным (необязательным) функционалом являются:
-- локализация
-- тёмная тема
-- статистика на основе Яндекс Метрики
-- экран авторизации
-- экран онбординга
-- алерт с предложением оценить приложение
-- сообщение о сетевых ошибках
-- кастомный launch screen
-- поиск по таблице/коллекции в своём эпике
+- The app showcases an NFT catalog structured into collections.
+- Users can browse collection details, individual NFTs, and add favorites.
+- Users can add and remove items from the cart and complete purchases (simulated).
+- Users can view rankings and detailed user profiles.
+- Users can check their profile, including favorite and owned NFTs.
 
-# Функциональные требования
+Optional features include:
+- Localization
+- Dark mode
+- Statistics via Yandex Metrics
+- Authentication screen
+- Onboarding screen
+- App rating prompt
+- Network error messages
+- Custom launch screen
+- Search within collections
 
-## Каталог
+## Catalog
 
-**Экран каталога**
+### Catalog Screen
+The catalog screen displays a list of available NFT collections using `UITableView`. Each collection displays:
+- Cover image
+- Collection name
+- Number of NFTs
 
-На экране каталога отображается таблица (UITableView), показывающая доступные коллекции NFT. Для каждой коллекции NFT отображается:
-- обложка коллекции;
-- название коллекции;
-- количество NFT в коллекции.
+A sorting button allows users to reorder collections by various criteria.
 
-Также на экране есть кнопка сортировки, при нажатии на которую пользователю предлагается выбрать один из доступных способов сортировки. Содержимое таблицы упорядочивается согласно выбранному способу.
+A loading indicator is displayed until data is loaded.
 
-Пока данные для показа не загружены, должен отображаться индикатор загрузки.
+Clicking on a collection navigates to its detail screen.
 
-При нажатии на одну из ячеек таблицы пользователь попадает на экран выбранной коллекции NFT.
+### NFT Collection Screen
+Displays detailed information about a selected NFT collection, including:
 
-**Экран коллекции NFT**
+- Cover image
+- Collection name
+- Description
+- Author name (links to their website)
+- A `UICollectionView` of NFTs in the collection
 
-Экран отображает информацию о выбранной коллекции NFT, и содержит:
+Clicking the author's name opens their website in a WebView.
 
-- обложку коллекции NFT;
-- название коллекции NFT;
-- текстовое описание коллекции NFT;
-- имя автора коллекции (ссылка на его сайт);
-- коллекцию (UICollectionView) с информацией о входящий в коллекцию NFT.
+Each NFT cell contains:
+- NFT image
+- NFT name
+- Rating
+- Price in ETH
+- Favorite button (heart icon)
+- Add to cart button
 
-При нажатии на имя автора коллекции открывается его сайт в вебвью.
+Clicking the heart icon toggles favorite status.
 
-Каждая ячейка коллекции содержит:
-- изображение NFT;
-- название NFT;
-- рейтинг NFT;
-- стоимость NFT (в ETH);
-- кнопку для добавления в избранное / удаления из избранного (сердечко);
-- кнопку добавления NFT в корзину / удаления NFT из корзины.
+Clicking the add-to-cart button adds/removes the NFT from the cart.
 
-При нажатии на сердечко производится добавление NFT в избранное / удаление NFT из избранного.
+Clicking an NFT cell opens its detailed screen.
 
-При нажатии на кнопку добавления NFT в корзину / удаления NFT из корзины производится добавление или удаление NFT из заказа (корзины). Изображение кнопки при этом меняется, если NFT добавлено в заказ отображается кнопка с крестиком, если нет - кнопка без крестика.
+### NFT Detail Screen
+Implemented partially by a mentor via live coding, not required for student implementation.
 
-При нажатии на ячейку открывается экран NFT.
+## Cart
 
-**Экран NFT**
+### Order Screen
+Displays a `UITableView` list of NFTs in the cart, showing:
+- Image
+- Name
+- Rating
+- Price
+- Remove from cart button
 
-Экран частично реализуется наставником в ходе life coding. Реализация экрана студентами не требуется.
+Clicking the remove button displays a confirmation dialog with:
+- NFT image
+- Removal confirmation text
+- Confirm and cancel buttons
 
-## Корзина
+A sorting button allows sorting by various criteria.
 
-**Экран заказа**
+At the bottom, a panel displays the total number of NFTs and price, along with a checkout button.
 
-На экране таблицы отображается таблица (UITableView) со списком добавленных в заказ NFT.
-Для каждого NFT указаны:
-- изображение;
-- имя;
-- рейтинг;
-- цена;
-- кнопка удаления из корзины.
+A loading indicator is displayed until data is loaded or refreshed.
 
-При нажатии на кнопку удаления из корзины показывается экран подтверждения удаления, который содержит:
-- изображение NFT;
-- текст об удалении;
-- кнопку подтверждения удаления;
-- кнопку отказа от удаления.
-
-Сверху на экране есть кнопка сортировки, при нажатии на которую пользователю предлагается выбрать один из доступных способов сортировки. Содержимое таблицы упорядочивается согласно выбранному способу.    
-
-Внизу экрана расположена панель с количеством NFT в заказе, общей ценой и кнопкой оплаты.
-При нажатии на кнопку оплаты происходит переход на экран выбора валюты.
-
-Пока данные для показа не загружены или обновляются, должен отображаться индикатор загрузки.
-
-**Экран выбора валюты**
-
-Экран позволяет выбрать валюту для оплаты заказа.
-
-Сверху экрана находится заголовок и кнопка возврата на предыдущий экран.
-Под ним - коллекция UICollectionCell с доступными способами оплаты.
-Для каждой валюты указывается:
-- логотип;
-- полное наименование;
-- сокращенное наименование.
-
-Внизу находится текст со ссылкой на пользовательское соглашение (ведет на https://yandex.ru/legal/practicum_termsofuse/ , открывается в вебвью).
-
-Под текстом - кнопка оплаты, при ее нажатии посылается запрос на сервер. Если сервер ответил, что оплата прошла успешно, то показывается экран с информацией об этом и кнопкой возврата в корзину. В случае неуспешной оплаты показывается соответствующий экран с кнопками повтора запроса и возврата в корзину.
-
-## Профиль
-
-**Экран профиля**
-
-Экран показывает информацию о пользователе. Он содержит:
-- фото пользователя;
-- имя пользователя;
-- описание пользователя;
-- таблицу (UITableView) с ячейками Мои NFT (ведет на экран NFT пользователя), Избранные NFT (ведет на экран с избранными NFT), Сайт пользователя (открывает в вебвью сайт пользователя).
-
-В правом верхнем углу экрана находится кнопка редактирования профиля. Нажав на нее, пользователь видит всплывающий экран, на котором может отредактировать имя пользователя, описание, сайт и ссылку на изображение. Загружать само изображение через приложение не нужно, обновляется только ссылка на изображение.
-
-**Экран Мои NFT**
-
-Представляет собой таблицу (UITableView), каждая ячейка которой содержит:
-- иконку NFT;
-- название NFT;
-- автора NFT;
-- цену NFT в ETH.
-
-Сверху на экране есть кнопка сортировки, при нажатии на которую пользователю предлагается выбрать один из доступных способов сортировки. Содержимое таблицы упорядочивается согласно выбранному способу.
-
-В случае отсутствия NFT показывается соответствующая надпись.
-
-**Экран Избранные NFT**
-
-Содержит коллекцию (UICollectionView) c NFT, добавленными в избранное (лайкнутыми). Каждая ячейка содержит информацию об NFT:
-- иконка;
-- сердечко;
-- название;
-- рейтинг;
-- цена в ETH.
-
-Нажатие на сердечко удаляет NFT из избранного, содержимое коллекции при этом обновляется.
-
-В случае отсутствия избранных NFT показывается соответствующая надпись.
-
-## Статистика
-
-**Экран рейтинга**
-
-Экран отображает список пользователей. Он представляет собой таблицу (UITableView). Для каждого пользователя указываются:
-- место в рейтинге;
-- аватарка;
-- имя пользователя;
-- количество NFT.
-
-Сверху на экране есть кнопка сортировки, при нажатии на которую пользователю предлагается выбрать один из доступных способов сортировки. Содержимое таблицы упорядочивается согласно выбранному способу.
-
-При нажатии на одну из ячеек происходит переход на экран информации о пользователе.
-
-**Экран информации о пользователе**
-
-Экран отображает информацию о пользователе:
-
-- фото пользователя;
-- имя пользователя;
-- описание пользователя.
-
-Также он содержит кнопку перехода на сайт пользователя (открывается в вебвью) и возможность перехода на экран Коллекции пользователя.
-
-**Экран коллекции пользователя**
-
-Содержит коллекцию (UICollectionView) c NFT пользователя. Каждая ячейка содержит информацию об NFT:
-- иконка;
-- сердечко;
-- название;
-- рейтинг;
-- стоимость NFT (в ETH);
-- кнопку добавления NFT в корзину / удаления NFT из корзины.
-
-# Сортировка данных
-
-На экранах «Каталог», «Корзина», «Мои NFT», «Статистика» есть настройка сортировки. Выбранный пользователем порядок сортировки должен сохраняться локально на устройстве. После перезапуска приложения восстанавливается предыдущее значение.
-
-**Значение сортировки по умолчанию:**
-- экран «Каталог» — по количеству NFT;
-- экран «Корзина» — по названию;
-- экран «Мои NFT» — по рейтингу;
-- экран «Статистика» — по рейтингу.
+### Currency Selection Screen
+Allows users to select a currency for payment.
+
+Includes:
+- Header with back button
+- `UICollectionView` of available payment methods, showing:
+  - Logo
+  - Full name
+  - Abbreviation
+- Terms of use link (`https://yandex.ru/legal/practicum_termsofuse/`) opening in WebView
+- Payment button
+
+If payment succeeds, a success screen appears; otherwise, an error screen appears with retry and back-to-cart buttons.
+
+## Profile
+
+### Profile Screen
+Displays user information, including:
+- Profile picture
+- Name
+- Description
+- Table with navigation items: My NFTs, Favorite NFTs, and Website
+
+A top-right edit button allows users to update their name, description, website, and profile picture URL (image upload not required).
+
+### My NFTs Screen
+A `UITableView` listing owned NFTs, each showing:
+- NFT icon
+- Name
+- Author
+- Price in ETH
+
+A sorting button allows users to order NFTs by different criteria.
+
+If no NFTs are owned, a message is displayed.
+
+### Favorite NFTs Screen
+A `UICollectionView` of liked NFTs, each showing:
+- Icon
+- Heart icon
+- Name
+- Rating
+- Price in ETH
+
+Clicking the heart removes the NFT from favorites, updating the collection.
+
+If no favorite NFTs exist, a message is displayed.
+
+## Statistics
+
+### Rankings Screen
+A `UITableView` listing users, displaying:
+- Rank
+- Avatar
+- Name
+- NFT count
+
+A sorting button allows reordering by various criteria.
+
+Clicking a user navigates to their profile screen.
+
+### User Profile Screen
+Displays:
+- Profile picture
+- Name
+- Description
+- Website link (opens in WebView)
+- Link to user’s NFT collection
+
+### User’s NFT Collection Screen
+A `UICollectionView` listing a user’s NFTs, each showing:
+- Icon
+- Heart icon
+- Name
+- Rating
+- Price in ETH
+- Add to/remove from cart button
+
+## Data Sorting
+
+Sorting is available in Catalog, Cart, My NFTs, and Rankings screens. The selected order is stored locally and restored on app restart.
+
+**Default sorting order:**
+- Catalog – by NFT count
+- Cart – by name
+- My NFTs – by rating
+- Rankings – by rating
