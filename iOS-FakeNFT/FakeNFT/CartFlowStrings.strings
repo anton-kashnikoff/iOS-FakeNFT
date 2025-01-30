@@ -1,0 +1,38 @@
+/* 
+  CartFlowStrings.strings
+  FakeNFT
+
+  Created by Aleksey Yakushev on 27.10.2023.
+  
+*/
+
+"cartPage.title" = "Корзина";
+
+"checkoutView.paymentMethod" = "Выберете способ оплаты";
+
+"cart.empty" = "Корзина пуста";
+"cart.checkout" = "К оплате";
+"cartItem.priceLabel" = "Цена";
+
+"sortSheet.title" = "Сортировка";
+"sortSheet.byName" = "По названию";
+"sortSheet.byPrice" = "По цене";
+"sortSheet.byRating" = "По рейтингу";
+"sortSheet.close" = "Закрыть";
+
+"alert.title" = "Упс! Что-то пошло не так :(";
+"alert.message" = "Попробуйте ещё раз!";
+"alert.retry" = "Повторить";
+"alert.cancel" = "Отмена";
+"alert.ok" = "OK";
+
+"paymentView.payButton" = "Оплатить";
+"paymentView.userAgreementButton" = "Пользовательского соглашения";
+"paymentView.disclaimerLabel" = "Совершая покупку, вы соглашаетесь с условиями";
+
+"deleteConfirmation.label" = "Вы уверены, что хотите\nудалить объект из корзины?";
+"deleteConfirmation.cancel" = "Вернуться";
+"deleteConfirmation.proceed" = "Удалить";
+
+"successView.label" = "Успех! Оплата прошла,\nпоздравляем с покупкой!";
+"successView.back" = "Вернуться в каталог";
