@@ -18,6 +18,7 @@ This repository contains an iOS application and a backend implemented using [Vap
 - macOS 15+
 - Xcode 16+
 - Swift 5.9+
+
 Note: The project has not been tested on Xcode versions below 16 and macOS versions below 15, but it may still work.
 
 ### 🌍 Run local Server
